@@ -5,11 +5,10 @@ use std::backtrace::Backtrace;
 use std::io::Write;
 use std::process::exit;
 
-use console::Term;
+use console::{Term, style};
 use thiserror::Error;
 
 use crate::checkbox::{CheckboxClient, CheckboxClientError};
-use crate::ezconsole::style_e;
 
 mod checkbox;
 mod morse;
@@ -26,7 +25,7 @@ type Result<T> = std::result::Result<T, Error>;
 
 fn main() {
     if let Err(error) = main_for_result() {
-        eprintln!("{}", style_e(format!("Error: {:?}", error)).red());
+        eprintln!("{}", style(format!("Error: {:?}", error)).for_stderr().red());
         exit(1);
     }
 }
