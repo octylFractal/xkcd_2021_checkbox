@@ -2,6 +2,8 @@ xkcd_2021_checkbox
 ==================
 Client for XKCD's 2021 April Fools, "Checkbox".
 
+You will need nightly Rust in order to build this project.
+
 Usage is pretty simple, just type some stuff in the box. It'll panic if you give it anything
 not translatable to morse, though, so be careful!
 
